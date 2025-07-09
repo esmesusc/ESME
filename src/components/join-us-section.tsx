@@ -340,9 +340,10 @@ export default function JoinUsSection() {
 
           {/* FAQ Section */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0,  }}
+            whileInView={{ opacity: 1,  }}
             transition={{ duration: 0.8 }}
+
             viewport={{ once: true }}
           >
             <h3 className="text-2xl dark:text-white font-bold text-[#1C1C1C] mb-6">Frequently Asked Questions</h3>
