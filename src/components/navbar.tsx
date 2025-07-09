@@ -52,6 +52,7 @@ export default function Navbar() {
           
           <Image src='/ESME_logo_white.png' alt="ESME Logo" width={80} height={80} /> 
         </motion.div>
+        
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">

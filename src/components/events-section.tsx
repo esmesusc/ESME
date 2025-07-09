@@ -120,7 +120,7 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-wrap gap-4 justify-center mb-12"
+          className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center mb-12"
         >
           <div className="flex gap-2">
             {["all", "upcoming", "past"].map((status) => (
@@ -134,10 +134,11 @@ export default function EventsSection() {
               </Button>
             ))}
           </div>
-          <div className="flex flex-col  gap-2">
+          <div className="flex flex-col md:flex-row  gap-2">
 
             {["all", "workshop", "competition", "seminar", "networking"].map((category) => (
               <Button
+
                 key={category}
                 variant={categoryFilter === category ? "default" : "outline"}
                 onClick={() => setCategoryFilter(category)}
