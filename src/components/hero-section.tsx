@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Key, ArrowRight, Sparkles } from "lucide-react"
+import { easeInOut } from 'framer-motion';
 
 export default function HeroSection() {
   
@@ -13,7 +14,7 @@ export default function HeroSection() {
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.2,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: easeInOut,
       },
     },
   }
@@ -25,7 +26,7 @@ export default function HeroSection() {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: easeInOut,
       },
     },
   }
