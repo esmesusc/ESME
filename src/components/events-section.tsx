@@ -134,7 +134,8 @@ export default function EventsSection() {
               </Button>
             ))}
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col  gap-2">
+
             {["all", "workshop", "competition", "seminar", "networking"].map((category) => (
               <Button
                 key={category}
