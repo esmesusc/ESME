@@ -94,10 +94,27 @@ html {
 }
 
 /* Image optimization */
-img {
+/* img {
   max-width: 100%;
   height: auto;
   display: block;
+} */
+
+
+.swiper-pagination-bullet {
+  min-width: 20px;
+  min-height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #c3bfbf;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background-color: #d87016!;
 }
 
 @layer utilities {

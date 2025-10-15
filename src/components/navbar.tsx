@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: "Events", href: "#events" },
     { name: "Magazines", href: "#projects" },
     { name: "Team", href: "#team" },
-    { name: "Partners", href: "#partners" },
+    { name: "Partners", href: "#partners" }
   ]
 
   return (

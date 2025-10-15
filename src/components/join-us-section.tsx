@@ -12,28 +12,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle, Users, BookOpen, Award, Network } from "lucide-react"
 import { Separator } from "./ui/separator"
 
-const benefits = [
-  {
-    icon: Users,
-    title: "Professional Network",
-    description: "Connect with industry leaders, alumni, and peers in materials engineering",
-  },
-  {
-    icon: BookOpen,
-    title: "Learning Opportunities",
-    description: "Access to workshops, seminars, and hands-on training programs",
-  },
-  {
-    icon: Award,
-    title: "Recognition & Awards",
-    description: "Showcase your achievements and compete in prestigious competitions",
-  },
-  {
-    icon: Network,
-    title: "Industry Connections",
-    description: "Direct access to internships and job opportunities with partner companies",
-  },
-]
+// const benefits = [
+//   {
+//     icon: Users,
+//     title: "Professional Network",
+//     description: "Connect with industry leaders, alumni, and peers in materials engineering",
+//   },
+//   {
+//     icon: BookOpen,
+//     title: "Learning Opportunities",
+//     description: "Access to workshops, seminars, and hands-on training programs",
+//   },
+//   {
+//     icon: Award,
+//     title: "Recognition & Awards",
+//     description: "Showcase your achievements and compete in prestigious competitions",
+//   },
+//   {
+//     icon: Network,
+//     title: "Industry Connections",
+//     description: "Direct access to internships and job opportunities with partner companies",
+//   },
+// ]
 
 const faqs = [
   {
@@ -100,58 +100,8 @@ export default function JoinUsSection() {
   }
 
   return (
-    <section id="join" className="py-20  dark:bg-slate-950  bg-white">
+    <section id="contact" className="py-20  dark:bg-slate-950  bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold dark:text-white text-[#1C1C1C] mb-6">
-            Join <span className="text-[#F58220]">ESME</span> Today
-          </h2>
-          <p className="text-xl dark:text-slate-200 text-gray-600 max-w-3xl mx-auto">
-            Become part of Egypt&apos;s most dynamic materials engineering community and unlock your potential for innovation
-            and leadership.
-          </p>
-        </motion.div>
-
-        {/* Benefits */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-        >
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="h-full text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <motion.div
-                    className="w-16 h-16 bg-gradient-to-br from-[#F58220] to-[#D87016] rounded-2xl flex items-center justify-center mx-auto mb-4"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <benefit.icon className="w-8 h-8 text-white" />
-                  </motion.div>
-                  <h3 className="text-lg font-bold dark:text-white text-[#1C1C1C] mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600 dark:text-slate-200 text-sm">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Application Form */}
           <motion.div

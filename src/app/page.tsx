@@ -12,6 +12,8 @@ import JoinUsSection from "@/components/join-us-section"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 import LoadingScreen from "@/components/loading-screen"
+import LeadersSection from "@/components/leaders-section"
+import ApplicationForm from "@/components/application-form"
 
 export default function HomePage() {
   const [loadingState, setLoadingState] = useState({
@@ -107,6 +109,8 @@ export default function HomePage() {
               <ProjectsSection />
               <TeamSection />
               <PartnersSection />
+              <LeadersSection />
+              <ApplicationForm />
               <JoinUsSection />
             </main>
 
