@@ -124,7 +124,7 @@ export default function ApplicationForm() {
             return
         } 
         console.log(formData);
-        const res: Response = await fetch(API_URL + '/autherize', {
+        const res: Response = await fetch(API_URL + '/applicants', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(formData)
