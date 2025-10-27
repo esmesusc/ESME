@@ -105,7 +105,6 @@ export default function ApplicationForm() {
         value: string
     ) => {
         setFormdata({ ...formData, [key]: value });
-        console.log(formData);
     }
 
     const [error, setError] = useState("");
@@ -123,14 +122,12 @@ export default function ApplicationForm() {
             setError('Please Fill All The Fields!')
             return
         } 
-        console.log(formData);
         const res: Response = await fetch(API_URL + '/applicants', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(formData)
         });
         const data: SubmitResponse = await res.json();
-        console.log(data);
         if(data.success){
             alert(data.message)
         } else {

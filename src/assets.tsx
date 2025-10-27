@@ -1,4 +1,4 @@
-export const API_URL = 'esme-production-7741.up.railway.app'
+export const API_URL = 'https://esme-backend.vercel.app/'
 
 export const Leaders = [
     {

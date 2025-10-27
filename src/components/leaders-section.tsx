@@ -120,7 +120,7 @@ export default function LeadersSection() {
                     disableOnInteraction: false,
                 }}
             >
-                {Leaders.map((leader, i) => (
+                {Leaders.reverse().map((leader, i) => (
                     <SwiperSlide key={i} className='rounded-xl overflow-hidden mb-10'>
                         <div className='flex flex-col' style={{maxHeight: '500px'}}>
                             <div className='w-full flex items-center justify-center' style={{maxHeight: '400px'}}>
