@@ -122,7 +122,7 @@ export default function ApplicationForm() {
             setError('Please Fill All The Fields!')
             return
         } 
-        const res: Response = await fetch(API_URL + '/applicants', {
+        const res: Response = await fetch(API_URL + '/api/applicants', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(formData)
