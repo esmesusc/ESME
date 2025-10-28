@@ -137,9 +137,11 @@ export default function ApplicationForm() {
         });
         const data: SubmitResponse = await res.json();
         if(data.success){
-            setModalContent(<div className="bg-white p-10 text-2xl rounded-lg flex flex-col gap-5 items-center">
+            setModalContent(<div className="bg-white p-10 rounded-lg flex flex-col gap-5 items-center">
                 <div>
-                    <GiCheckMark className="text-[#d87016] mr-3 inline" />
+                    <GiCheckMark className="text-[#d87016] mr-3 inline text-3xl" />
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl text-nowrap">
                     {data.message}
                 </div>
                 <div><Button onClick={()=> setShowModal(false)}>Great!</Button></div>
