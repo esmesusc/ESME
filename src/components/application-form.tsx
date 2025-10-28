@@ -6,7 +6,9 @@ import { motion } from "framer-motion"
 import { Button } from "./ui/button"
 import { useState } from "react"
 import { API_URL } from "@/assets"
-import { set } from "react-hook-form"
+
+import { GiCheckMark } from "react-icons/gi";
+
 
 
 const inputs = [
@@ -102,6 +104,7 @@ export default function ApplicationForm() {
 
     const [showModal, setShowModal] = useState(false);
     const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -122,6 +125,7 @@ export default function ApplicationForm() {
 
     const handleSubmit = async (e: SubmitEvent): Promise<void> => {
         e.preventDefault();
+        setLoading(true)
         if(!Object.values(formData).every(value => value !== '')) {
             setError('Please Fill All The Fields!')
             return
@@ -133,7 +137,13 @@ export default function ApplicationForm() {
         });
         const data: SubmitResponse = await res.json();
         if(data.success){
-            setModalContent(data.message)
+            setModalContent(<div className="bg-white p-10 text-2xl rounded-lg flex flex-col gap-5 items-center">
+                <div>
+                    <GiCheckMark className="text-[#d87016] mr-3 inline" />
+                    {data.message}
+                </div>
+                <div><Button onClick={()=> setShowModal(false)}>Great!</Button></div>
+            </div>)
             setShowModal(true);
             setFormdata({
                 name: '',
@@ -146,9 +156,10 @@ export default function ApplicationForm() {
         } else {
             setError(data.message || '');
         }
+        setLoading(false)
     }
 
-    
+
     return (
         <div id="join" className="w-11/12 md:w-10/12 mx-auto py-5 md:py-10 flex flex-col md:flex-row gap-5 items-center">
             {showModal && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -204,7 +215,7 @@ export default function ApplicationForm() {
                             <option value="it">IT</option>
                         </select>
                         {error && <p className="text-red-500 text-xl rounded-lg text-center px-3 my-3">{error}*</p>}
-                        <Button type="submit" className="w-full h-12 bg-[#F58220] hover:bg-[#D87016] text-white font-semibold"> Start The Journy! </Button>
+                        <Button type="submit" className="w-full h-12 bg-[#F58220] hover:bg-[#D87016] text-white font-semibold"> {loading ? 'Submitting...' : 'Start The Journy!'} </Button>
                     </div>
                 </form>
             </motion.div>

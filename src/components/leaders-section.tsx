@@ -129,7 +129,7 @@ export default function LeadersSection() {
                                 <Image width={300} height={400} className='w-full h-full object-contain' src={leader.image || '/leader_placeholder.webp'} alt="" ></Image>
                             </div>
                             <div className='bg-slate-950 dark:bg-[#d87016] w-full flex flex-col items-center pb-3 rounded-b-xl gap-2 justify-center font-bold'>
-                                <h1 className="text-[#d87016] dark:text-slate-950 text-xl md:text-2xl italic">Mr/ {leader.name} </h1>
+                                <h1 className="text-[#d87016] dark:text-slate-950 text-xl md:text-2xl italic text-nowrap">Mr/ {leader.name} </h1>
                                 <h2 className="text-white text-lg md:text-xl"> {leader.season} </h2>
                             </div>
                         </div>
