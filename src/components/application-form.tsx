@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "./ui/button"
 import { useState } from "react"
 import { API_URL } from "@/assets"
+import { set } from "react-hook-form"
 
 
 const inputs = [
@@ -99,6 +100,9 @@ export default function ApplicationForm() {
         committee: ''
     })
 
+    const [showModal, setShowModal] = useState(false);
+    const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
         key: string,
@@ -129,14 +133,27 @@ export default function ApplicationForm() {
         });
         const data: SubmitResponse = await res.json();
         if(data.success){
-            alert(data.message)
+            setModalContent(data.message)
+            setShowModal(true);
+            setFormdata({
+                name: '',
+                faculty: '',
+                currentYear: '',
+                department: '',
+                gradYear: '',
+                birthDate: ''
+            })  
         } else {
             setError(data.message || '');
         }
     }
 
+    
     return (
         <div id="join" className="w-11/12 md:w-10/12 mx-auto py-5 md:py-10 flex flex-col md:flex-row gap-5 items-center">
+            {showModal && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div>{modalContent}</div>
+                </div>}
             <motion.div className="max-w-2xl flex flex-col gap-5" initial={{ opacity: 0, x: -20 }} 
                                                 whileInView={{ opacity: 1, x: 0 }}>
                 <h1 className="text-2xl lg:text-5xl italic">Every Success Needs a <br /> <span className="text-[#d87016] font-bold">Foundation</span> </h1>
